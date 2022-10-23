@@ -1,8 +1,22 @@
 package ru.netology.statistic;
 
 public class Radio {
-    public int currentStation;
+    public int maxStation = 10;
+    public int minStation = 0;
     public int currentVolume;
+    public int minVolume = 0;
+    public int maxVolume = 100;
+    public int currentStation = minStation;
+
+    public Radio(int minStation, int maxStation) {
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.currentStation = minStation;
+    }
+
+    public Radio(int size) {
+        maxStation = minStation + size - 1;
+    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -13,10 +27,10 @@ public class Radio {
     }
 
     public void insertVolume(int newVolume) {
-        if (newVolume < 0) {
+        if (newVolume < minVolume) {
             return;
         }
-        if (newVolume > 10) {
+        if (newVolume > maxVolume) {
             return;
         }
         currentVolume = newVolume;
@@ -24,35 +38,35 @@ public class Radio {
 
 
     public void increaseStation() {
-        if (currentStation < 9) {
+        if (currentStation < maxStation) {
             currentStation = currentStation + 1;
-        } else currentStation = 0;
+        } else currentStation = minStation;
     }
 
     public void reduceStation() {
-        if (currentStation > 0) {
+        if (currentStation > minStation) {
             currentStation = currentStation - 1;
-        } else currentStation = 9;
+        } else currentStation = maxStation;
     }
 
     public void setStation(int newStation) {
-        if (newStation < 0) {
+        if (newStation < minStation) {
             return;
         }
-        if (newStation > 9) {
+        if (newStation > maxStation) {
             return;
         }
         currentStation = newStation;
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
     }
 
     public void reduceVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         }
     }
