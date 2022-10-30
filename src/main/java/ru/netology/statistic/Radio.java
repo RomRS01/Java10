@@ -27,10 +27,10 @@ public class Radio {
     }
 
     public void insertVolume(int newVolume) {
-        if (newVolume < minVolume) {
+        if (newVolume < minVolume ) {
             return;
         }
-        if (newVolume > maxVolume) {
+        if (newVolume > maxVolume ) {
             return;
         }
         currentVolume = newVolume;
