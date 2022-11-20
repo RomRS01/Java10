@@ -15,7 +15,7 @@ public class RadioTest {
 
     @Test
     public void shouSetStation2() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(7);
         int expected = 7;
         int actual = cond.getCurrentStation();
@@ -24,7 +24,7 @@ public class RadioTest {
 
     @Test
     public void shouSetStationOverMax() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(12);
         int expected = 0;
         int actual = cond.getCurrentStation();
@@ -33,7 +33,7 @@ public class RadioTest {
 
     @Test
     public void shouSetStationBelowMin() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(-1);
         int expected = 0;
         int actual = cond.getCurrentStation();
@@ -42,7 +42,7 @@ public class RadioTest {
 
     @Test
     public void shouIncreaseStation() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(7);
         cond.increaseStation();
         int expected = 8;
@@ -52,7 +52,7 @@ public class RadioTest {
 
     @Test
     public void shouIncreaseStationOverMax() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(9);
         cond.increaseStation();
         int expected = 0;
@@ -62,7 +62,7 @@ public class RadioTest {
 
     @Test
     public void shouReduceStation() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(7);
         cond.reduceStation();
         int expected = 6;
@@ -72,7 +72,7 @@ public class RadioTest {
 
     @Test
     public void shouIncreaseStationBelowMin() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.setStation(0);
         cond.reduceStation();
         int expected = 9;
@@ -82,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void shouIncreaseVolume() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(7);
         cond.increaseVolume();
         int expected = 8;
@@ -92,7 +92,7 @@ public class RadioTest {
 
     @Test
     public void shouIncreaseVolumeMax() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(100);
         cond.increaseVolume();
         int expected = 100;
@@ -102,7 +102,7 @@ public class RadioTest {
 
     @Test
     public void shoureduceVolume() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(7);
         cond.reduceVolume();
         int expected = 6;
@@ -112,7 +112,7 @@ public class RadioTest {
 
     @Test
     public void shoureduceVolumeMin() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(0);
         cond.reduceVolume();
         int expected = 0;
@@ -122,7 +122,7 @@ public class RadioTest {
 
     @Test
     public void shouInsertVolumeMin() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(-1);
         int expected = cond.getCurrentVolume();
         int actual = cond.getCurrentVolume();
@@ -131,7 +131,7 @@ public class RadioTest {
 
     @Test
     public void shouInsertVolumeMax() {
-        Radio cond = new Radio(10);
+        Radio cond = new Radio();
         cond.insertVolume(101);
         int expected = cond.getCurrentVolume();
         int actual = cond.getCurrentVolume();
