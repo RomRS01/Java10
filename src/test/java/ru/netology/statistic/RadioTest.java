@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void shouSetStation1() {
-        Radio cond = new Radio(0, 9);
+        Radio cond = new Radio(9);
         cond.setStation(7);
         int expected = 7;
         int actual = cond.getCurrentStation();
